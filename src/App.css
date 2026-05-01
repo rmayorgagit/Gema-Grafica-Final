@@ -50,8 +50,8 @@ csshtml, body, #root {
 }
 
 .contact-button {
-  background-color: var(--primary-color);
-  color: #000;
+  background-color: #FFD700; /* Amarillo Gema brillante */
+  color: #000000; /* Letras negras para que se lean bien */
   border: none;
   padding: 1.2rem 2.5rem;
   font-size: 1.1rem;
@@ -59,7 +59,14 @@ csshtml, body, #root {
   border-radius: 50px;
   cursor: pointer;
   margin-top: 2rem;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4); /* Resplandor amarillo */
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+  background-color: #ffffff; /* Cambia a blanco cuando pasas el mouse */
 }
 
 .footer {
