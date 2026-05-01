@@ -1,76 +1,109 @@
-css/* Estilo Gema Gráfica - Versión Pro */
+css/* Estilo Gema Gráfica - Formulario Pro */
 :root {
-  --primary-color: #FFD700; /* Amarillo Gema */
+  --primary-color: #FFD700;
   --bg-dark: #121212;
   --card-bg: #1e1e1e;
 }
 
-/* Esto asegura que TODA la pantalla sea negra */
-csshtml, body, #root {
-  background-color: #121212 !important; /* El !important es la orden final */
+html, body, #root {
+  background-color: var(--bg-dark) !important;
   margin: 0;
   padding: 0;
   min-height: 100vh;
   width: 100%;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #ffffff;
+  color: white;
   font-family: 'Inter', sans-serif;
 }
 
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
 .title {
-  font-size: 5rem; /* ¡Más grande para que impacte! */
+  font-size: 3.5rem;
   font-weight: 900;
-  letter-spacing: -3px;
-  margin-bottom: 0;
   color: var(--primary-color);
-  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: -2px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  opacity: 0.7;
-  margin-top: -10px;
-  margin-bottom: 3rem;
-  font-weight: 300;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  opacity: 0.6;
+  letter-spacing: 3px;
+  margin-bottom: 2.5rem;
 }
 
 .card {
   background: var(--card-bg);
-  padding: 3rem 2rem;
+  padding: 2.5rem;
   border-radius: 20px;
   border: 1px solid #333;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  text-align: left; /* Para que los textos del formulario se vean ordenados */
 }
 
-.contact-button {
-  background-color: #FFD700; /* Amarillo Gema brillante */
-  color: #000000; /* Letras negras para que se lean bien */
+.form-title {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Aquí es donde arreglamos los cuadros feos */
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box; /* Esto evita que se salgan del cuadro */
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.whatsapp-button {
+  width: 100%;
+  background-color: #25D366; /* Verde oficial de WhatsApp */
+  color: white;
   border: none;
-  padding: 1.2rem 2.5rem;
+  padding: 1.2rem;
   font-size: 1.1rem;
   font-weight: 800;
-  border-radius: 50px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4); /* Resplandor amarillo */
-  transition: all 0.3s ease;
+  margin-top: 1rem;
+  transition: transform 0.2s;
 }
 
-.contact-button:hover {
-  transform: scale(1.05);
-  background-color: #ffffff; /* Cambia a blanco cuando pasas el mouse */
+.whatsapp-button:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
 }
 
 .footer {
-  margin-top: 5rem;
+  margin-top: 3rem;
   font-size: 0.8rem;
   opacity: 0.4;
+  line-height: 1.5;
 }
