@@ -16,6 +16,7 @@ function App() {
   return (
     <div className="container">
       <header className="header">
+        <img src="/logo.jpg" alt="Gema Gráfica Logo" className="logo-main" />
         <h1 className="title">GEMA GRÁFICA</h1>
         <p className="subtitle">DISEÑO Y SOLUCIONES VISUALES</p>
       </header>
