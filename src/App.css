@@ -23,9 +23,10 @@ html, body, #root {
 .title {
   font-size: 3.5rem;
   font-weight: 900;
-  color: var(--primary-color);
+  color: #FFD700; /* ¡Amarillo para que resalte! */
   margin-bottom: 0;
   letter-spacing: -2px;
+  text-transform: uppercase;
 }
 
 .subtitle {
@@ -57,10 +58,10 @@ html, body, #root {
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  opacity: 0.9;
+  margin-bottom: 0.8rem; /* Más espacio hacia abajo */
+  margin-top: 1rem;      /* Más espacio hacia arriba */
+  font-size: 0.95rem;
+  color: #FFD700;        /* También en amarillo para guiar la vista */
 }
 
 /* Aquí es donde arreglamos los cuadros feos */
