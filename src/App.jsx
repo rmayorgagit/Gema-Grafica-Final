@@ -60,7 +60,22 @@ function App() {
           <div className="form-group"><label>Tu Nombre</label><input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} /></div>
           <div className="form-group"><label>Servicio</label><select value={servicio} onChange={(e) => setServicio(e.target.value)}><option>Impresión Gran Formato</option><option>Diseño de Logo</option><option>Vallas Publicitarias</option></select></div>
           <div className="form-group"><label>Detalles</label><textarea value={detalles} onChange={(e) => setDetalles(e.target.value)}></textarea></div>
-          <button className="whatsapp-button" onClick={enviarWhatsApp}>Enviar por WhatsApp</button>
+          {/* BOTONES DE CONTACTO MÚLTIPLE */}
+        <div className="contact-actions">
+          <button className="whatsapp-button" onClick={enviarWhatsApp}>
+            Enviar por WhatsApp
+          </button>
+          
+          <div className="secondary-buttons">
+            <a href={`mailto:info@://gemagrafica.com - ${servicio}&body=Hola Gema Gráfica, mi nombre es ${nombre}. Detalles: ${detalles}`} className="email-button">
+              Enviar por Correo
+            </a>
+            
+            <a href="tel:50688243336" className="call-button">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
         </section>
       </main>
 
