@@ -73,6 +73,10 @@ function App() {
         <p>Naranjo, Alajuela | San José, Costa Rica</p>
         <p>&copy; 2026 Gema Gráfica - Soluciones Visuales</p>
       </footer>
+       {/* Botón flotante de WhatsApp */}
+      <a href="https://wa.me" className="whatsapp-float" target="_blank" rel="noreferrer">
+        <span style={{fontSize: '35px'}}>+</span> 
+      </a>
     </div>
   )
 }
