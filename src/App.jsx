@@ -10,7 +10,7 @@ function App() {
     // CORRECCIÓN DEL NÚMERO: 88243336
     const telefono = "50688243336" 
     const mensaje = "Hola Gema Gráfica, mi nombre es " + nombre + ". Requiero una cotización para: " + servicio + ". Detalles: " + detalles
-    const url = "https://wa.me" + telefono + "?text=" + encodeURIComponent(mensaje)
+    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje)
     window.open(url, '_blank')
   }
 
