@@ -5,16 +5,15 @@ function App() {
   const [nombre, setNombre] = useState('')
   const [servicio, setServicio] = useState('Impresión Gran Formato')
   const [detalles, setDetalles] = useState('')
-  const [mostrarTodo, setMostrarTodo] = useState(false) // Control para la galería
+  const [mostrarTodo, setMostrarTodo] = useState(false)
 
   const enviarWhatsApp = () => {
     const telefono = "50688243336" 
     const mensaje = "Hola Gema Gráfica, mi nombre es " + nombre + ". Requiero una cotización para: " + servicio + ". Detalles: " + detalles
-    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje)
+    const url = "https://wa.me" + telefono + "?text=" + encodeURIComponent(mensaje)
     window.open(url, '_blank')
   }
 
-  // Lista de sus 18 archivos (extraídos de su imagen)
   const proyectos = [
     { img: "/clinica.jpg", t: "Clínicas" }, { img: "/bus.jpg", t: "Buses" },
     { img: "/toldo.jpg", t: "Toldos" }, { img: "/eka.jpg", t: "EKA" },
@@ -60,37 +59,28 @@ function App() {
           <div className="form-group"><label>Tu Nombre</label><input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} /></div>
           <div className="form-group"><label>Servicio</label><select value={servicio} onChange={(e) => setServicio(e.target.value)}><option>Impresión Gran Formato</option><option>Diseño de Logo</option><option>Vallas Publicitarias</option></select></div>
           <div className="form-group"><label>Detalles</label><textarea value={detalles} onChange={(e) => setDetalles(e.target.value)}></textarea></div>
-          {/* BOTONES DE CONTACTO MÚLTIPLE */}
-        <div className="contact-actions">
-          <button className="whatsapp-button" onClick={enviarWhatsApp}>
-            Enviar por WhatsApp
-          </button>
           
-          <div className="secondary-buttons">
-            <a href={`mailto:info@://gemagrafica.com - ${servicio}&body=Hola Gema Gráfica, mi nombre es ${nombre}. Detalles: ${detalles}`} className="email-button">
-              Enviar por Correo
-            </a>
-            
-            <a href="tel:50688243336" className="call-button">
-              Llamar Ahora
-            </a>
+          <div className="contact-actions">
+            <button className="whatsapp-button" onClick={enviarWhatsApp}>Enviar por WhatsApp</button>
+            <div className="secondary-buttons">
+              <a href="mailto:info@gemagrafica.com" className="email-button">Enviar por Correo</a>
+              <a href="tel:50688243336" className="call-button">Llamar Ahora</a>
+            </div>
           </div>
-        </div>
         </section>
       </main>
 
-     <footer className="footer">
+      <footer className="footer">
         <div className="social-links">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-          <a href={`https://wa.me`} target="_blank" rel="noreferrer">WhatsApp Directo</a>
         </div>
-        <p>Naranjo, Alajuela | San José, Costa Rica</p>
-        <p>&copy; 2026 Gema Gráfica - Soluciones Visuales</p>
+        <p>Naranjo, Alajuela | WhatsApp: 8824-3336</p>
+        <p>&copy; 2026 Gema Gráfica</p>
       </footer>
-       {/* Botón flotante de WhatsApp */}
-      <a href="https://wa.me" className="whatsapp-float" target="_blank" rel="noreferrer">
-        <span style={{fontSize: '35px'}}>+</span> 
+
+      <a href="https://wa.me50688243336" className="whatsapp-float" target="_blank" rel="noreferrer">
+        <span style={{fontSize: '30px'}}>+</span>
       </a>
     </div>
   )
