@@ -171,3 +171,44 @@ input, select, textarea {
 html {
   scroll-behavior: smooth;
 }
+/* DISEÑO DE CONTACTO MÚLTIPLE */
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.secondary-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Los pone a la par */
+  gap: 12px;
+}
+
+.email-button, .call-button {
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-button {
+  background-color: #333; /* Gris oscuro elegante */
+  color: white;
+  border: 1px solid #444;
+}
+
+.call-button {
+  background-color: #FFD700; /* Amarillo Gema */
+  color: black;
+}
+
+.email-button:hover, .call-button:hover {
+  transform: scale(1.03);
+}
