@@ -5,24 +5,33 @@ function App() {
   const [nombre, setNombre] = useState('')
   const [servicio, setServicio] = useState('Impresión Gran Formato')
   const [detalles, setDetalles] = useState('')
+  const [mostrarTodo, setMostrarTodo] = useState(false) // Control para la galería
 
   const enviarWhatsApp = () => {
-    // CORRECCIÓN DEL NÚMERO: 88243336
     const telefono = "50688243336" 
     const mensaje = "Hola Gema Gráfica, mi nombre es " + nombre + ". Requiero una cotización para: " + servicio + ". Detalles: " + detalles
     const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje)
     window.open(url, '_blank')
   }
 
+  // Lista de sus 18 archivos (extraídos de su imagen)
+  const proyectos = [
+    { img: "/clinica.jpg", t: "Clínicas" }, { img: "/bus.jpg", t: "Buses" },
+    { img: "/toldo.jpg", t: "Toldos" }, { img: "/eka.jpg", t: "EKA" },
+    { img: "/colombia.jpg", t: "Radio Colombia" }, { img: "/artecreativo.jpg", t: "Arte Creativo" },
+    { img: "/toldo2.jpg", t: "Toldos Pro" }, { img: "/gastrobar.jpg", t: "Gastrobar" },
+    { img: "/expoauto.jpg", t: "Expo Auto" }, { img: "/camionverdura.jpg", t: "Rotulación Móvil" },
+    { img: "/ucimed.jpg", t: "UCIMED" }, { img: "/elgallo.jpg", t: "El Gallo" },
+    { img: "/husspuppies.jpg", t: "Hush Puppies" }, { img: "/camion mbs.jpg", t: "MBS" },
+    { img: "/llantas.jpg", t: "Llantas" }, { img: "/bmi.jpg", t: "BMI" },
+    { img: "/riteve.jpg", t: "Riteve" }, { img: "/columbia.jpg", t: "Columbia" }
+  ];
+
+  const visibles = mostrarTodo ? proyectos : proyectos.slice(0, 6);
+
   return (
     <div className="container">
-      <nav className="navbar">
-        <div className="nav-links">
-          <a href="#inicio">Inicio</a>
-          <a href="#galeria">Proyectos</a>
-          <a href="#cotizacion">Cotizar</a>
-        </div>
-      </nav>
+      <nav className="navbar"><div className="nav-links"><a href="#inicio">Inicio</a><a href="#galeria">Proyectos</a><a href="#cotizacion">Cotizar</a></div></nav>
 
       <header id="inicio" className="header">
         <img src="/logo.jpg" alt="Logo" className="logo-main" />
@@ -32,47 +41,30 @@ function App() {
 
       <main className="content">
         <section id="galeria" className="gallery-section">
-          <h2 className="section-title">Nuestros Proyectos</h2>
+          <h2 className="section-title">Portafolio de Proyectos</h2>
           <div className="gallery-grid">
-            {/* GALERÍA COMPLETA */}
-            <div className="gallery-item"><img src="/clinica.jpg" alt="Clínicas" /><div className="item-info"><h3>Clínicas</h3></div></div>
-            <div className="gallery-item"><img src="/bus.jpg" alt="Buses" /><div className="item-info"><h3>Rotulación de Buses</h3></div></div>
-            <div className="gallery-item"><img src="/toldo.jpg" alt="Toldos" /><div className="item-info"><h3>Toldos</h3></div></div>
-            <div className="gallery-item"><img src="/eka.jpg" alt="EKA" /><div className="item-info"><h3>Señalética EKA</h3></div></div>
-            <div className="gallery-item"><img src="/colombia.jpg" alt="Colombia" /><div className="item-info"><h3>Radio Colombia</h3></div></div>
-            <div className="gallery-item"><img src="/columbia.jpg" alt="Columbia" /><div className="item-info"><h3>Radio Columbia</h3></div></div>
-            <div className="gallery-item"><img src="/artecreativo.jpg" alt="Arte" /><div className="item-info"><h3>Arte Creativo</h3></div></div>
+            {visibles.map((p, i) => (
+              <div key={i} className="gallery-item">
+                <img src={p.img} alt={p.t} />
+                <div className="item-info"><h3>{p.t}</h3></div>
+              </div>
+            ))}
           </div>
+          <button className="expand-button" onClick={() => setMostrarTodo(!mostrarTodo)}>
+            {mostrarTodo ? "VER MENOS" : "VER GALERÍA COMPLETA (" + proyectos.length + ")"}
+          </button>
         </section>
 
         <section id="cotizacion" className="card">
           <h2 className="form-title">Asistente de Cotización</h2>
-          <div className="form-group">
-            <label>Tu Nombre</label>
-            <input type="text" placeholder="Ej. Juan Pérez" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-          </div>
-          <div className="form-group">
-            <label>Servicio</label>
-            <select value={servicio} onChange={(e) => setServicio(e.target.value)}>
-              <option>Impresión Gran Formato</option>
-              <option>Diseño de Logo</option>
-              <option>Gestión de Redes Sociales</option>
-              <option>Rotulación de Vehículos</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Detalles</label>
-            <textarea placeholder="Describe tu idea..." value={detalles} onChange={(e) => setDetalles(e.target.value)}></textarea>
-          </div>
+          <div className="form-group"><label>Tu Nombre</label><input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} /></div>
+          <div className="form-group"><label>Servicio</label><select value={servicio} onChange={(e) => setServicio(e.target.value)}><option>Impresión Gran Formato</option><option>Diseño de Logo</option><option>Vallas Publicitarias</option></select></div>
+          <div className="form-group"><label>Detalles</label><textarea value={detalles} onChange={(e) => setDetalles(e.target.value)}></textarea></div>
           <button className="whatsapp-button" onClick={enviarWhatsApp}>Enviar por WhatsApp</button>
         </section>
       </main>
 
-      <footer className="footer">
-        <p>Servicio Profesional en Naranjo, Alajuela</p>
-        <p>WhatsApp: 8824-3336 | info@gemagrafica.com</p>
-        <p>&copy; 2026 Gema Gráfica</p>
-      </footer>
+      <footer className="footer"><p>Naranjo, Alajuela | WhatsApp: 8824-3336</p></footer>
     </div>
   )
 }
