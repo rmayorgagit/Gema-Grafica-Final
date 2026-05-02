@@ -64,7 +64,15 @@ function App() {
         </section>
       </main>
 
-      <footer className="footer"><p>Naranjo, Alajuela | WhatsApp: 8824-3336</p></footer>
+     <footer className="footer">
+        <div className="social-links">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          <a href={`https://wa.me`} target="_blank" rel="noreferrer">WhatsApp Directo</a>
+        </div>
+        <p>Naranjo, Alajuela | San José, Costa Rica</p>
+        <p>&copy; 2026 Gema Gráfica - Soluciones Visuales</p>
+      </footer>
     </div>
   )
 }
