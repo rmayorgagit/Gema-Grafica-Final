@@ -94,3 +94,19 @@ input, select, textarea {
 .whatsapp-button {
   width: 100%; background: #25D366; color: white; padding: 15px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer;
 }
+.expand-button {
+  background: transparent;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 4rem;
+  transition: all 0.3s;
+}
+
+.expand-button:hover {
+  background: #FFD700;
+  color: black;
+}
