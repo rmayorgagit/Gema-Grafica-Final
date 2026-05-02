@@ -98,15 +98,21 @@ input, select, textarea {
   background: transparent;
   color: #FFD700;
   border: 2px solid #FFD700;
-  padding: 1rem 2rem;
-  font-weight: bold;
-  border-radius: 50px;
+  padding: 0.8rem 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border-radius: 50px; /* Redondeado elegante */
   cursor: pointer;
-  margin-bottom: 4rem;
-  transition: all 0.3s;
+  margin: 2rem 0 4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 214, 0, 0.1);
 }
 
 .expand-button:hover {
   background: #FFD700;
-  color: black;
+  color: #000;
+  box-shadow: 0 0 30px rgba(255, 214, 0, 0.4); /* Resplandor dorado */
+  transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
 }
