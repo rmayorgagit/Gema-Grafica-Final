@@ -154,7 +154,14 @@ input, select, textarea {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
-
+.social-links a {
+  color: #FFD700 !important;
+  border: 1px solid #FFD700;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
 .social-links a:hover {
   background: #FFD700;
   color: black;
